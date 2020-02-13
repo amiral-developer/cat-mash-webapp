@@ -1,7 +1,6 @@
-import axios from 'axios';
-import { default as React, useEffect, useState } from 'react';
+import { default as React, useState } from 'react';
 import './App.css';
-import logo from './logo.svg';
+import Cat from './components/cat.component';
 
 function App() {
   const [cats, setCats] = useState([
@@ -409,8 +408,8 @@ function App() {
 
   return (
     <div className="app">
-      <img src={cats[0].url} />
-      <img src={cats[1].url} />
+      <Cat url={cats[0].url}/>
+      <Cat url={cats[1].url}/>
     </div>
   );
 }
