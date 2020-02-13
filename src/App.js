@@ -1,6 +1,6 @@
 import { default as React, useState } from 'react';
 import './App.css';
-import Cat from './components/cat.component';
+import Cat from './components/cat/cat.component';
 
 function App() {
   const [cats, setCats] = useState([
@@ -406,10 +406,27 @@ function App() {
     }
   ]);
 
+  const vote = id => {
+    const cat = cats.find(lCat => lCat.id === id);
+
+    if (cat) {
+      if (cat.score)
+        cat.score = 1;
+      else cat.score++;
+    }
+  };
+
   return (
     <div className="app">
-      <Cat url={cats[0].url}/>
-      <Cat url={cats[1].url}/>
+      <header>
+        Clique sur le chat le plus mignon ;)
+      </header>
+      <div>
+        <div className="cats-container">
+          <Cat url={cats[0].url} click={vote.bind(this, cats[0].id)} />
+          <Cat url={cats[1].url} click={vote.bind(this, cats[1].id)} />
+        </div>
+      </div>
     </div>
   );
 }
