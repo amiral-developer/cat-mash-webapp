@@ -1,10 +1,15 @@
-import { CATS } from '../data/cats';
+import axios from 'axios';
 
 class CatsService {
-    cats = CATS;
+    cats;
 
-    constructor() {
-        this.cats.forEach(cat => cat.score = Math.floor(Math.random() * 10));
+    async load() {
+        return axios.get(`http://localhost:3001/cats/`)
+            .then(res => {
+                this.cats = res.data;
+                this.cats.forEach(cat => cat.score = Math.floor(Math.random() * 10));
+                return res.data
+            });
     }
 
     vote(id) {
