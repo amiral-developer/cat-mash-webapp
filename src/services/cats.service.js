@@ -4,7 +4,7 @@ class CatsService {
     cats;
 
     async load() {
-        return axios.get(`http://devabs.fr:3101/cats?_sort=score&_order=asc`)
+        return axios.get(`https://cat-mash-api.herokuapp.com/cats?_sort=score&_order=asc`)
             .then(res => {
                 this.cats = res.data;
                 return res.data
@@ -20,7 +20,7 @@ class CatsService {
             else cat.score = 1;
         }
 
-        return axios.put(`http://devabs.fr:3101/cats/${cat.id}`
+        return axios.put(`https://cat-mash-api.herokuapp.com/cats/${cat.id}`
             , { ...cat, score: cat.score }
             , { headers: { 'Content-Type': 'application/json' } })
             .then(res => res.data);
