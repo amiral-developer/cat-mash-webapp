@@ -5,18 +5,21 @@ import catsService from '../../services/cats.service';
 import './ranking.page.css';
 
 function Ranking() {
-    const [cats, setCats] = useState(catsService.cats.sort((cat1, cat2) => cat2.score - cat1.score));
+    const [cats, setCats] = useState(catsService.cats);
 
     const renderCats = () => {
-        return cats.map((cat, key) =>
-            (
-                <tr key={key}>
-                    <th scope="row">{key + 1}</th>
-                    <td><Cat url={cat.url} /></td>
-                    <td>{cat.score}</td>
-                </tr>
-            )
-        );
+        return cats
+            .filter(cat => cat.score !== undefined)
+            .sort((cat1, cat2) => cat2.score - cat1.score)
+            .map((cat, key) =>
+                (
+                    <tr key={key}>
+                        <th scope="row">{key + 1}</th>
+                        <td><Cat url={cat.url} /></td>
+                        <td>{cat.score}</td>
+                    </tr>
+                )
+            );
     }
 
     return (

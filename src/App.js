@@ -12,7 +12,7 @@ function App() {
     catsService.load().then(() => {
       setReady(true);
     });
-  });
+  }, []);
 
   return (
     (isReady ?
