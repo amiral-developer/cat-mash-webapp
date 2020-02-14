@@ -10,11 +10,11 @@ function Ranking() {
     const renderCats = () => {
         return cats.map((cat, key) =>
             (
-                <div key={key} className="cat-ranking">
-                    
-                    <Cat url={cat.url} />
-                    <div>{cat.score}</div>
-                </div>
+                <tr key={key}>
+                    <th scope="row">{key + 1}</th>
+                    <td><Cat url={cat.url} /></td>
+                    <td>{cat.score}</td>
+                </tr>
             )
         );
     }
@@ -24,12 +24,19 @@ function Ranking() {
             <header>
                 Classement des chats les plus mignons !
              </header>
-            <div>
-                <div className="cats-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Rang</th>
+                        <th scope="col">Chat</th>
+                        <th scope="col">Score</th>
+                    </tr>
+                </thead>
+                <tbody>
                     {renderCats()}
-                </div>
-                <Link to="/">Retour aux votes</Link>
-            </div>
+                </tbody>
+            </table>
+            <Link to="/">Retour aux votes</Link>
         </div>
     );
 }
