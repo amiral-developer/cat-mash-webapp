@@ -21,10 +21,11 @@ function Ranking() {
 
     return (
         <div className="ranking-page">
-            <header>
-                Classement des chats les plus mignons !
-             </header>
-            <table class="table">
+            <div className="jumbotron">
+                <p className="lead">Classement des chats les plus mignons !</p>
+                <Link to="/">Retour aux votes</Link>
+            </div>
+            <table className="table">
                 <thead>
                     <tr>
                         <th scope="col">Rang</th>
@@ -36,7 +37,6 @@ function Ranking() {
                     {renderCats()}
                 </tbody>
             </table>
-            <Link to="/">Retour aux votes</Link>
         </div>
     );
 }

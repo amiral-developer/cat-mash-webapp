@@ -34,9 +34,9 @@ function Home() {
 
     return (
         <div className="app">
-            <header>
+            <div className="jumbotron">
                 Clique sur le chat le plus mignon ;)
-             </header>
+             </div>
             <div>
                 <div className="cats-container">
                     <Cat url={firstFighterCat.url} click={vote.bind(this, firstFighterCat.id)} />
