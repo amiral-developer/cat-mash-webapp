@@ -1,0 +1,25 @@
+.top-ranking {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px grey;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px lightslategrey;
+    width: 70%;
+    background-color: #0e305b;
+    padding: 20px;
+    margin: 20px;
+}
+
+.top-ranking .dauphins {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: -50px;
+}
+
+.top-ranking .other-ranks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

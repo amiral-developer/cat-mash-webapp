@@ -1,0 +1,66 @@
+.top-rank {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+.top-rank .cat-image-container {
+    position: relative;
+}
+
+.top-rank .cat-image {
+    border: solid 1px transparent;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 2px;
+    position: relative;
+}
+
+.top-rank .cat-rank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 10px 5px 5px grey;
+    width: 30px;
+    height: 30px;
+    color: white;
+    position: absolute;
+    top: 2px;
+    left: -9px;
+}
+
+.top-rank .cat-rank-1 {
+    border: solid 1px gold;
+    background-color: gold;
+}
+
+.top-rank .cat-rank-2 {
+    border: solid 1px gainsboro;
+    background-color: gainsboro;
+}
+
+.top-rank .cat-rank-3 {
+    border: solid 1px burlywood;
+    background-color: burlywood;
+}
+
+.top-rank .cat-id {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.top-rank .cat-score-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-rank .cat-score {
+    margin: 1px;
+    margin-right: 5px;
+}

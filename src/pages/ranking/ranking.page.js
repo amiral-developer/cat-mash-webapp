@@ -1,47 +1,38 @@
 import { default as React, useState } from 'react';
-import { Link } from 'react-router-dom';
 import Cat from '../../components/cat/cat.component';
+import TopRanking from '../../components/top-ranking/top-ranking.component';
 import catsService from '../../services/cats.service';
 import './ranking.page.css';
+import Rank from '../../components/rank/rank.component';
 
-function Ranking() {
-    const [cats, setCats] = useState(catsService.cats);
+const Ranking = props => {
+    const prepareCats = () => {
+        const catsWithScore = catsService.cats.filter(cat => cat.score !== undefined);
+        const catsSorted = catsWithScore.sort((cat1, cat2) => cat2.score - cat1.score);
 
-    const renderCats = () => {
-        return cats
-            .filter(cat => cat.score !== undefined)
-            .sort((cat1, cat2) => cat2.score - cat1.score)
-            .map((cat, key) =>
-                (
-                    <tr key={key}>
-                        <th scope="row">{key + 1}</th>
-                        <td><Cat url={cat.url} /></td>
-                        <td>{cat.score}</td>
-                    </tr>
-                )
-            );
+        return catsSorted;
+    }
+
+    const [cats, setCats] = useState(prepareCats());
+
+    const renderRanksNotInTop = () => {
+        const catsNotInTop = cats.filter((cat, i) => i > 2);
+
+        return catsNotInTop.map((cat, i) => (
+            <Rank key={i} rank={i + 4} cat={cat}></Rank>
+        ));
     }
 
     return (
         <div className="ranking-page">
-            <div className="jumbotron">
-                <p className="lead">Classement des chats les plus mignons !</p>
-                <Link to="/">Retour aux votes</Link>
+            <div className="top-ranks">
+                <TopRanking cats={cats}></TopRanking>
             </div>
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Rang</th>
-                        <th scope="col">Chat</th>
-                        <th scope="col">Score</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {renderCats()}
-                </tbody>
-            </table>
+            <div className="other-ranks">
+                {renderRanksNotInTop()}
+            </div>
         </div>
     );
-}
+};
 
 export default Ranking;

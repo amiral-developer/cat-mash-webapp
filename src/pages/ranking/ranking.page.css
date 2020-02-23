@@ -3,3 +3,18 @@
 .ranking-page .cats-container {
     display: block;
 }
+
+.ranking-page .other-ranks,
+.ranking-page .top-ranks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ranking-page .rank:nth-child(odd) {
+    background-color: #354175b8;
+}
+
+.ranking-page .rank:nth-child(even) {
+    background-color: #0e305b00;
+}
