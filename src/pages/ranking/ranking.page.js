@@ -4,6 +4,7 @@ import TopRanking from '../../components/top-ranking/top-ranking.component';
 import catsService from '../../services/cats.service';
 import './ranking.page.css';
 import Rank from '../../components/rank/rank.component';
+import { Link } from 'react-router-dom';
 
 const Ranking = props => {
     const prepareCats = () => {
@@ -30,6 +31,9 @@ const Ranking = props => {
             </div>
             <div className="other-ranks">
                 {renderRanksNotInTop()}
+            </div>
+            <div className="home-access">
+                <Link to="/">Voter pour le chat le plus beau</Link>
             </div>
         </div>
     );

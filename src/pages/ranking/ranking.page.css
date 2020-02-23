@@ -21,3 +21,29 @@
 .ranking-page .rank:nth-child(even) {
     background-color: #0e305b00;
 }
+
+.home-access {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    padding: 20px;
+    bottom: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: aliceblue;
+    border: solid 4px #0e305b;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left-width: 0;
+    font-size: 25px;
+}
+
+.home-access>a {
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+    text-decoration: none;
+    font-weight: bold;
+    color: #3a5162;
+    font-size: 30px;
+}
