@@ -2,7 +2,7 @@ import React from 'react';
 import './rank.component.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw } from '@fortawesome/free-solid-svg-icons';
-
+import PropTypes from 'prop-types';
 
 const Rank = props => {
 
@@ -20,5 +20,10 @@ const Rank = props => {
         </div>
     );
 }
+
+Rank.propsType = {
+    rank: PropTypes.number,
+    cat: PropTypes.object.isRequired,
+};
 
 export default Rank;

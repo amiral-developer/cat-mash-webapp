@@ -12,6 +12,3 @@ export default function RouteWrapper({
 RouteWrapper.propTypes = {
     component: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired
 };
-
-RouteWrapper.defaultProps = {
-};

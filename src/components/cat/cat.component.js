@@ -1,5 +1,6 @@
 import React from 'react';
 import './cat.component.css';
+import PropTypes from 'prop-types';
 
 const Cat = (props) => {
 
@@ -9,5 +10,9 @@ const Cat = (props) => {
         </div>
     );
 }
+
+Cat.propsType = {
+    click: PropTypes.func,
+};
 
 export default Cat;

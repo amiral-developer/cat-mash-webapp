@@ -2,7 +2,7 @@ import React from 'react';
 import './top-rank.component.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw } from '@fortawesome/free-solid-svg-icons';
-
+import PropTypes from 'prop-types';
 
 const TopRank = props => {
 
@@ -15,10 +15,15 @@ const TopRank = props => {
             </div>
             <div className="cat-score-container">
                 <p className="cat-score">{props.cat.score}</p>
-                <FontAwesomeIcon icon={faPaw} color="white"/>
+                <FontAwesomeIcon icon={faPaw} color="white" />
             </div>
         </div>
     );
 }
+
+TopRank.propsType = {
+    rank: PropTypes.number,
+    cat: PropTypes.object.isRequired,
+};
 
 export default TopRank;

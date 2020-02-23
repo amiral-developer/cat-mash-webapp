@@ -14,7 +14,7 @@ const Ranking = props => {
         return catsSorted;
     }
 
-    const [cats, setCats] = useState(prepareCats());
+    const [cats] = useState(prepareCats());
 
     const renderRanksNotInTop = () => {
         const catsNotInTop = cats.filter((cat, i) => i > 2);

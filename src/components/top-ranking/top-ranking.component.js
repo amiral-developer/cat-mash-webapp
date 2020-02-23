@@ -1,6 +1,7 @@
 import React from 'react';
 import './top-ranking.component.css';
 import TopRank from '../top-rank/top-rank.component';
+import PropTypes from 'prop-types';
 
 const TopRanking = props => {
 
@@ -14,5 +15,9 @@ const TopRanking = props => {
         </div>
     );
 }
+
+TopRanking.propsType = {
+    cats: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default TopRanking;
