@@ -7,3 +7,10 @@
   align-items: center;
   justify-content: center;
 }
+
+.loading {
+  margin-top: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

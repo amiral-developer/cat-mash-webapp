@@ -1,4 +1,7 @@
-.ranking-page {}
+.ranking-page {
+    font-weight: 800;
+    font-size: 20px;
+}
 
 .ranking-page .cats-container {
     display: block;
