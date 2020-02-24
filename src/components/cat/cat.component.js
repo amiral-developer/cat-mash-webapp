@@ -13,6 +13,7 @@ const Cat = (props) => {
 
 Cat.propsType = {
     click: PropTypes.func,
+    url: PropTypes.string,
 };
 
 export default Cat;
