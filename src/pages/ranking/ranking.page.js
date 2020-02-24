@@ -7,6 +7,10 @@ import Rank from '../../components/rank/rank.component';
 import { Link } from 'react-router-dom';
 
 const Ranking = props => {
+    // Using props for tests 
+    // TODO Look for best solution
+    if (props.cats) catsService.cats = props.cats;
+
     const prepareCats = () => {
         const catsWithScore = catsService.cats.filter(cat => cat.score !== undefined);
         const catsSorted = catsWithScore.sort((cat1, cat2) => cat2.score - cat1.score);
