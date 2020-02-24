@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Cat Mash WebApp
 
 ## Available Scripts
 
@@ -27,6 +27,19 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `git push heroku master`
+
+Builds app and deploy on Heroku.
+This script required to be logged to Heroku account. Please contact administrator to be invited like as Collaborator.
+
+Heroku Link : https://cat-mash-webapp.herokuapp.com/
+
+```bash
+heroku login
+git push heroku master
+heroku open 
+```
+
 ### `yarn eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
@@ -37,7 +50,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Documentation
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
@@ -66,4 +79,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# cat-mash-webapp
+
+## Contact
+Amir Ben Slimane - [Support](https://github.com/AmiralBS/cat-mash-webapp/issues)
