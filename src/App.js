@@ -11,6 +11,7 @@ const App = () => {
   const [isReady, setReady] = useState(false);
 
   useEffect(() => {
+    document.title = 'Cat Mash';
     catsService.load().then(() => {
       setReady(true);
     });
