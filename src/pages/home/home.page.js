@@ -17,7 +17,11 @@ const shuffle = array => {
     return array;
 };
 
-function Home() {
+const Home = props => {
+    // Using props for tests 
+    // TODO Look for best solution
+    if (props.cats) catsService.cats = props.cats;
+
     const [cats, setCats] = useState(shuffle(catsService.cats));
 
     const countVotes = () => cats.reduce((acc, cat) => acc + (cat.score ? cat.score : 0), 0);
@@ -35,7 +39,6 @@ function Home() {
 
         setFirstFighterCat(cats[0]);
         setSecondFighterCat(cats[1]);
-
 
         setVotesCounter(countVotes)
     };
@@ -60,6 +63,6 @@ function Home() {
             </div>
         </div>
     );
-}
+};
 
 export default Home;

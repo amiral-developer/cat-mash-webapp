@@ -7,7 +7,7 @@ import catsService from './services/cats.service';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-function App() {
+const App = () => {
   const [isReady, setReady] = useState(false);
 
   useEffect(() => {
@@ -22,7 +22,6 @@ function App() {
         <Router history={history}>
           <Routes />
         </Router>
-
       )
       : (
         <div className="loading">
