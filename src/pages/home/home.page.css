@@ -73,3 +73,20 @@
     font-weight: bold;
     color: #3a5162;
 }
+
+@media (max-width: 640px) {
+    .votes-container {
+        flex-direction: column;
+    }
+
+    .vote-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50%;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
